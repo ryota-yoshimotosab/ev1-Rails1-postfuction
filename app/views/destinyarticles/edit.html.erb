@@ -1,0 +1,29 @@
+<div id="newhead">記事の編集・更新</div>
+
+<%= form_for :destinyarticle, url: destinyarticle_path, method: :patch do |f| %>
+
+<% if @destinyarticle.errors.messages[:title].any? %>
+<div id="newhead">タイトルを入力してください</div>
+<% end %>
+
+<div id="newtitle">タイトル</div>
+<%= f.text_field :title, class: "newinput" %>
+
+<div id="newtitle">搭乗機</div>
+<%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+<%= tag.label do %>
+<div id="newcheck"> 
+    <%= tag.check_box %>
+    <%= tag.text %>
+ </div>
+<% end %>
+
+<% end %>
+<div id="newtitle">画像</div>
+<%= f.file_field :articleimage %>
+
+<div id="newtitle">内容</div>
+<%= f.text_area :text, class: "newinput" %><br>
+<%= f.hidden_field :user_id, value: current_user.id %>
+<%= f.submit "記事編集", class: "newsubmit" %>
+<% end %>

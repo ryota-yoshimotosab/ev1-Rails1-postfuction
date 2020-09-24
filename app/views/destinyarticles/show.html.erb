@@ -1,0 +1,75 @@
+<div id="newhead"><%= @destinyarticle.title %></div>
+<%= link_to destinyarticle_anotheruser_path(@destinyarticle) do %>
+<div id="newhead"><%= @destinyarticle.user.username %></div>
+<% end %>
+<% @destinyarticle.tags.each do |tag| %>
+<div id="newtitle"><%= tag.name %></div>
+<% end %>
+<% if @destinyarticle.articleimage.attached? %>
+<%= image_tag @destinyarticle.articleimage %>
+<% end %>
+<div id="newtitle"><%= @destinyarticle.text %></div>
+<%= link_to "記事一覧に戻る", destinyarticles_path, class: "editlink"  %>
+<%= link_to "新規記事作成", new_destinyarticle_path, class: "editlink" %>
+<br>
+<br>
+<% if Like.find_by(user_id: current_user.id, destinyarticle_id: @destinyarticle.id) %>
+
+<div id="redtext">
+    <div id="commentline"></div>
+<%= link_to "❤", destinyarticle_like_path(@destinyarticle), method: :delete, class: "likesubmit" %>
+<%= @destinyarticle.likes.count %>
+</div>
+<div id="likeuserall">いいねしたユーザー</div>
+<% @destinyarticle.likes.each do |like| %>
+
+<div id="likeuser">
+<%= like.user.username %>
+</div>
+<% end %>
+
+
+<% else %>
+<div id="commentline"></div>
+<%= form_for [@destinyarticle, @like] do |f| %>
+<%= f.hidden_field :destinyarticle_id, value: @destinyarticle.id %>
+<div id="redtext">
+<%= f.submit "♡", class: "likesubmit" %>
+<%= @destinyarticle.likes.count %>
+</div>
+<% end %>
+
+<% end %>
+
+
+
+<div id="commentline"></div>
+<div id="commentall">コメント一覧</div>
+
+<% @destinyarticle.records.each do |record| %>
+<div id="commentbox">
+<div id="commentalltext">投稿者名:<%= record.user.username %></div>
+<div id="commentalltext">コメント:<%= record.content %></div>
+
+<% if user_signed_in? && current_user.id == record.user_id %>
+<%= link_to "削除する", 
+destinyarticle_record_path(@destinyarticle, record), 
+method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
+<% end %>
+
+</div>
+<br>
+<% end %>
+
+<br>
+
+<% if user_signed_in? %>
+<%= form_for [@destinyarticle, @record] do |f| %>
+<%= f.hidden_field :destinyarticle_id, value: @destinyarticle.id %>
+<%= f.text_area :content %><br>
+<%= f.submit "コメントする" %>
+<% end %>
+<% end %>
+
+
+

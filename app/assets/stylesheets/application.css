@@ -1,0 +1,319 @@
+/*nosidebar*/
+
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#wrapp1 {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background-color: #000;
+}
+
+header {
+    width: 100%;
+    height: 10vw;
+    background-color: #fff;
+}
+
+
+#content1 {
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+
+#se1 {
+    width: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #ff0000;
+}
+
+#yieldwrapp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*//////////////////////*/
+
+/*destinyarticles*/
+
+#newhead {
+    color: #ff0000;
+    font-size: 4vw;
+}
+
+#newtitle {
+    color: #ff00ff;
+    font-size: 3vw;
+}
+
+.newinput {
+    width: 20vw;
+}
+
+.newsubmit {
+    width: 20vw;
+}
+
+.showlink {
+    text-decoration: none;
+}
+
+.editlink {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2vw;
+}
+
+#headerwrapp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerlink {
+    position: relative;
+    margin-right: 2vw;
+    font-size: 2vw;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.headerlink:hover {
+    color: #ff0000;
+}
+
+
+.headerlink::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #ff0000;
+    transform: scaleX(0);
+    transition: 0.3s;
+}
+
+
+.headerlink:hover::before {
+    transform: scaleX(1);
+}
+
+
+/*/////////////////*/
+
+/*devise*/
+#devisewrapp {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#devisealert {
+    color: #ff0000;
+    font-size: 2vw;
+}
+
+
+#signuphead {
+    color: #ff0000;
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.deviselabel {
+    color: #ff00ff;
+    font-size: 3vw;
+}
+
+.deviseinput {
+    width: 20vw;
+}
+
+.devisesubmit {
+    width: 20vw;
+}
+
+#profilename {
+    color: #ff0000;
+    font-size: 3vw;
+}
+
+#profiletitle {
+    color: #fff;
+    font-size: 2vw;
+}
+
+#profiletext {
+    color: #fff;
+    font-size: 1vw;
+}
+
+.usersshowlink {
+    text-decoration: none;
+}
+
+.imagesize {
+    position: absolute;
+    width:  6vw;
+ top: 0;
+    left: 0;
+}
+
+#imagemask {
+    position: relative;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+
+/*/////////////*/
+
+/*kaminari*/
+
+
+
+
+.pagination span {
+  
+    padding: 1vw;
+    border: 2px solid #ff0000;
+    font-size: 3vw;
+    color: #ff0000;
+}
+
+.pagination span.page.current {
+    border-left: 2px solid #ff0000;
+}
+
+.pagination span.page  {
+    border-left: transparent;
+}
+
+.pagination span.last {
+    border-left: transparent;
+    
+}
+
+
+
+.pagination span.next {
+    border-left: transparent;
+}
+
+.pagination a {
+
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/*//////////////////////*/
+
+/*comment*/
+
+#commentline {
+width: 100%;
+border: 2px dotted #ff0000;
+}
+
+#commentall {
+    color: #ff0000;
+    font-size: 3vw;
+}
+
+#commentalltext {
+    color: #ff00ff;
+    font-size: 2vw;
+}
+
+
+#commentbox {
+    border: 2px solid #ff0000;
+}
+
+
+/*///////////////////*/
+
+/*tag*/
+#newcheck {
+    color: #ff0000;
+    font-size: 2vw;
+}
+
+#articlesall {
+    color: #fff;
+    font-size: 4vw;
+}
+
+
+
+/*//////////////*/
+
+/*like*/
+
+.likesubmit {
+    border: transparent;
+    background-color: transparent;
+    color: #ff0000;
+    font-size: 4vw;
+    text-decoration: none;
+}
+
+
+#redtext {
+    color: #ff0000;
+    font-size: 3vw;
+}
+
+#likeuser {
+    color: #ff00ff;
+    font-size: 1vw;
+}
+
+#likeuserall {
+    color: #fff;
+    font-size: 2vw;
+}
+
+/*//////////////////*/
+
+/*contact*/
+
+#contacthead {
+    color: #ff0000;
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+#contacttitle {
+    color: #ff00ff;
+    font-size: 3vw;
+}
+
+.contactform {
+    width: 25vw;
+}
+
+
+/*/////////////*/

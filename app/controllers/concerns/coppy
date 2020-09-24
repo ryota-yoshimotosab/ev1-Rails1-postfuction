@@ -1,0 +1,113 @@
+/*nosidebar*/
+
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#wrapp1 {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background-color: #000;
+}
+
+header {
+    widtht: 100%;
+    height: 10vw;
+    background-color: #fff;
+}
+
+
+#content1 {
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+
+#se1 {
+    width: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #ff0000;
+}
+
+#yieldwrapp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*//////////////////////*/
+
+/*destinyarticles*/
+
+#newhead {
+    color: #ff0000;
+    font-size: 4vw;
+}
+
+#newtitle {
+    color: #ff00ff;
+    font-size: 3vw;
+}
+
+.newinput {
+    width: 20vw;
+}
+
+.newsubmit {
+    width: 20vw;
+}
+
+.showlink {
+    text-decoration: none;
+}
+
+.editlink {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2vw;
+}
+
+/*/////////////////*/
+
+/*devise*/
+#devisewrapp {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#devisealert {
+    color: #ff0000;
+    font-size: 2vw;
+}
+
+
+#signuphead {
+    color: #ff0000;
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.deviselabel {
+    color: #ff00ff;
+    font-size: 3vw;
+}
+
+.deviseinput {
+    width: 20vw;
+}
+
+.devisesubmit {
+    width: 20vw;
+}

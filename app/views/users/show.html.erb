@@ -1,0 +1,10 @@
+<% if @user.profileimage.attached? %>
+<%= image_tag @user.profileimage %>
+<% end %>
+<div id="profilename">ユーザー名</div>
+<div id="profiletitle"><%= @user.username %></div>
+
+<div id="profilename">プロフィール</div>
+<div id="profiletext"><%= @user.profile %></div>
+
+

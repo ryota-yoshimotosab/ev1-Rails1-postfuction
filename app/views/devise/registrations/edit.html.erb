@@ -1,0 +1,51 @@
+<div id="signuphead">アカウント編集</div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="deviselabel">ユーザー名</div>
+<%= f.text_field :username, class: "deviseinput" %>
+<div class="deviselabel">プロフィール</div>
+<%= f.text_area :profile, class: "deviseinput" %>
+<div class="deviselabel">プロフィール画像</div>
+<%= f.file_field :profileimage %>
+
+
+
+  <div class="field">
+    <%= f.label :メールアドレス, class: "deviselabel" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "deviseinput" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :パスワード, class: "deviselabel" %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "deviseinput" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :パスワード確認用, class: "deviselabel" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "deviseinput" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :現在のパスワード, class: "deviselabel" %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "deviseinput" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "アカウント更新" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "戻る", :back %>

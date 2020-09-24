@@ -1,0 +1,28 @@
+<div id="contacthead">お問い合わせ</div>
+<%= form_for :contact, url: contacts_path do |f| %>
+
+<% if @contact.errors.messages[:name].any? %>
+<div id="contacthead">名前を入力してください</div>
+<% end %>
+
+<% if @contact.errors.messages[:email].any? %>
+<div id="contacthead">メールアドレスを入力してください</div>
+<% end %>
+
+<% if @contact.errors.messages[:content].any? %>
+<div id="contacthead">お問い合わせ内容を入力してください</div>
+<% end %>
+
+
+
+
+<div id="contacttitle">お名前</div>
+<%= f.text_field :name, class: "contactform" %>
+<div id="contacttitle">メールアドレス</div>
+<%= f.email_field :email, class: "contactform" %>
+<div id="contacttitle">お問い合わせ内容</div>
+<%= f.text_area :content, class: "contactform" %>
+<br>
+<br>
+<%= f.submit "送信", class: "contactform" %>
+<% end %>

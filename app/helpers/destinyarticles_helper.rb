@@ -1,0 +1,2 @@
+module DestinyarticlesHelper
+end

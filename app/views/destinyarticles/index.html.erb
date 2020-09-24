@@ -1,0 +1,43 @@
+<div id="articlesall">記事一覧</div>
+
+<%= form_tag destinyarticles_path, method: :get do %>
+<%= select_tag :tag_id, 
+options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+ prompt: "タグで絞り込む" %>
+ <br>
+<%= text_field_tag :title, params[:title] %>
+<%= submit_tag "検索" %>
+
+
+<%= select_tag :orderselect, options_for_select([["投稿順", "old"], ["新着順", "new"], ["人気順", "popular"]]), 
+include_blank: "並び替え", onchange: "submit(this.form);" %>
+
+
+<% end %>
+
+
+<% @destinyarticles.each do |destinyarticle| %>
+<div id="newhead"><%= l destinyarticle.created_at, format: :short %></div>
+<%= link_to destinyarticle_path(destinyarticle), class: "showlink" do %>
+
+<div id="newhead"><%= destinyarticle.title %></div>
+<% end %>
+<div id="newhead">
+    <%= destinyarticle.user.username %>
+    <div id="imagemask">
+    <%= image_tag destinyarticle.user.profileimage, class: "imagesize" %>
+    </div>
+</div>
+<div id="newtitle"><%= destinyarticle.text %></div>
+
+<% if user_signed_in? && destinyarticle.user.id == current_user.id %>
+<%= link_to "記事を編集する", edit_destinyarticle_path(destinyarticle), class: "editlink" %>
+<%= link_to "記事を削除する", destinyarticle_path(destinyarticle), class: "editlink", method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
+
+<% end %>
+
+
+<% end %>
+
+<%= paginate @destinyarticles %>
+<br>

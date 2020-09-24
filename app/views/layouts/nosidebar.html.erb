@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rails1</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+      <div id="wrapp1">
+          <header>
+         <div id="headerwrapp">
+           <div id="headerbox">
+           <%= link_to "BLOG", new_destinyarticle_path, class: "headerlink" %>
+           <%= link_to "ARTICLES", destinyarticles_path, class: "headerlink" %>
+           </div>
+         </div>
+              </header>
+            
+          
+          <div id="content1">
+              <section id="se1">
+                <div id="devisewrapp">
+                  <div id="devisebox">
+                    <div id="devisealert"><%= notice %></div>
+                    <div id="devisealert"><%= alert %></div>
+                    
+                    <% if user_signed_in? %>
+                    <%= link_to users_show_path, class: "usersshowlink" do %>
+                    <div id="devisealert"><%= current_user.username%></div>
+                    <% end %>
+                    <%= link_to "アカウント編集", edit_user_registration_path %>
+                    <%= link_to "ログアウト", destroy_user_session_path %>
+                    
+                    <% else %>
+                    <%= link_to "TOP画面", root_path %>
+                    <%= link_to "新規作成", new_user_registration_path %>
+                    <%= link_to "ログイン", new_user_session_path %>
+                    
+                    <% end %>
+                    
+                    
+                  </div>
+                </div>
+                
+                
+                
+            <div id="yieldwrapp">
+                <div id="yieldbox">
+                    <%= yield %>
+                </div>
+            </div>
+                 
+                  
+              </section>
+              
+              
+              
+          </div>
+          <footer></footer>
+          
+      </div>
+    
+  </body>
+</html>
